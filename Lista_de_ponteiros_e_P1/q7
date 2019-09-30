@@ -1,0 +1,6 @@
+q7.
+
+*(pulo + 2); errado.
+*(pulo + 4); errado. 
+Pulo + 4; errado.
+Pulo + 2; correto.

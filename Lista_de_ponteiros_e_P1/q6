@@ -1,0 +1,18 @@
+q6.
+
+#include <stdio.h>
+int main(void){
+  float vet[5] = {1.1, 2.2, 3.3, 4.4, 5.5};
+  float *f;
+  int i;
+  f = vet;
+  printf("contador/valor/valor/endereco/endereco");
+  for(i = 0 ; i <= 4 ; i++){
+    printf("\ni = %d \n",i); // mostra o número de representação de iteração da função for
+    printf("vet[%d] = %.1f \n",i, vet[i]); // mostra o valor do vetor na posição de acordo o número da iteração da função for
+    printf("*(f + %d) = %.1f \n",i, *(f+i)); // o ponteiro "f" está com o endereço do valor da primeira posição do vetor mais o número da iteração da função for
+    printf("&vet[%d] = %X \n",i, &vet[i]); // mostra o endereço da posiçao do vetor do valor da iteração da função for
+    printf("(f + %d) = %X \n",i, f+i); // mostra o endereço da posição do ponteiro "f" acrescido do valor da iteração da função for
+    return 0;
+  }
+}

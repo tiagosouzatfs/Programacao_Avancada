@@ -1,0 +1,89 @@
+q19.
+
+#include <stdio.h>
+#include<stdlib.h>
+//função que multiplica as matrizes
+//o número de coluna de matA é igual ao número de linhas de matB
+void multiplicaMatriz(int**matA, int**matB, int**matC, int nlA, int ncA_nlB, int ncB){
+    for(int l=0; l<nlA ;l++){
+        for(int c=0; c<ncB; c++){
+            for(int i=0; i<ncA_nlB; i++){
+                matC[l][c] += (matA[l][i]*matB[i][c]);
+            }
+        }
+    }
+}
+int main(void){
+    int **matA, **matB, **matC;
+    int nlA, ncA_nlB, ncB;
+    //criando numeros aleatórios com função rand para linhas e colunas das matrizes
+    nlA = rand() %9 + 2;
+    ncB = rand() %9 + 2;
+    ncA_nlB = rand() %9 + 2;
+    //alocando espaço
+    matA = (int**)malloc(nlA * sizeof(int*));
+    matB = (int**)malloc(ncA_nlB * sizeof(int*));
+    matC = (int**)malloc(nlA * sizeof(int*));
+    //alocando os vetores para as linhas da matriz A e C
+    for(int i=0; i<nlA;i++){matA[i] = (int*)malloc(ncA_nlB * sizeof(int));
+        matC[i] = (int*)malloc(ncB * sizeof(int));
+    }
+    //alocando os vetores para as linhas da matriz B
+    for(int i=0; i<ncA_nlB;i++){
+        matB[i] = (int*)malloc(ncB * sizeof(int));
+    }
+    //preenchendo com valores aleatórios para a matriz A
+    for(int i=0; i<nlA;i++){
+        for(int j=0;j<ncA_nlB;j++){
+            matA[i][j] = rand() %9 + 0;
+        }
+    }
+    //preenchendo com valores aleatórios para a matriz B
+    for(int i=0; i<ncA_nlB;i++){
+        for(int j=0;j<ncB;j++){
+            matB[i][j] = rand() %9 + 0;
+        }
+    }
+    //matriz com elementos neutros
+    for(int i=0; i<nlA;i++){
+        for(int j=0;j<ncB;j++){
+            matC[i][j] = 0;
+        }
+    }
+    multiplicaMatriz(matA, matB, matC, nlA, ncA_nlB, ncB);
+    // matrizes A, B e C
+    printf("A:\n");
+    for(int i=0; i<nlA;i++){
+        for(int j=0;j<ncA_nlB;j++){
+            printf(" %d", matA[i][j]);
+        }
+        printf("\n");
+    }
+    printf("B:\n");
+    for(int i=0; i<ncA_nlB;i++){
+        for(int j=0;j<ncB;j++){
+            printf(" %d", matB[i][j]);}
+        printf("\n");
+    }
+    printf("C:\n");
+    for(int i=0; i<nlA;i++){
+        for(int j=0;j<ncB;j++){
+            printf(" %d", matC[i][j]);
+        }
+        printf("\n");
+    }
+    //liberando as linhas de A e C
+    for(int i=0; i<nlA;i++){
+        free(matA[i]);
+        free(matC[i]);
+    }
+    //liberando as linhas de B
+    for(int i=0; i<ncA_nlB;i++){
+        free(matB[i]);
+    }
+    //liberando o vetor que armazena nas linhas das matrizes
+    free(matA);
+    free(matB);
+    free(matC);
+    return 0;
+}

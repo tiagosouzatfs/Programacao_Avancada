@@ -1,0 +1,14 @@
+q3.
+
+#include <stdio.h>
+int main()
+{
+    int i=5, *p;
+    p = &i;
+    printf("%x %d %d %d %d \n", p,*p+2,**&p,3**p,**&p+4);
+    // "p" no augumento da função printf, foi declarado como hexadecimal, então 	ele mostra o endereço na memória de "i" 4094 em hexadecimal;
+    // *p+2 significa o valor da variável no endereço de memória de "i": 5 + 2 = 	7;
+    // **&p mostra o valor da variável no endereço de "p", depois no endereço de 	"i", que é = 5;
+    // 3**p faz 3 * o valor da varável no endereço de "i", que é: 3 * 5 = 15;
+    // **&p+4 mostra o valor da variável no endereço de "p", depois no endereço 	de "i", que é: 5 + 4 = 9;
+}

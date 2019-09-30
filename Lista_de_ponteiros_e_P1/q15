@@ -1,0 +1,21 @@
+q15.
+
+#include <stdio.h>
+#include <stdlib.h>
+int ord(const void *x, const void *y) {
+   if (*(int*)x > *(int*)y) {
+      return 1; // maior que zero: se o valor x é maior que y
+   } else if (*(int*)x < *(int*)y) {
+      return -1; // menor que zero: se o valor x é menor que y
+   } else {
+      return 0; // Zero: se x e y forem iguais
+   }
+}
+int main () {
+   int i, vetor[] = { 15, 30, 10, 20, 25 }; //vetor ord declarado
+   qsort(vetor, 5, sizeof(int), ord); //ordena o vetor ord com a função qsort que contém os seguintes parâmetros: o vetor, n de elementos, sizeof(tamanho do vetor), função que retorna o resultado da operação com 1, -1 e 0);
+   for( i = 0 ; i < 5; i++ ) {
+      printf("%i  ", vetor[i]); //mostra os valores do vetor
+   }
+   return 0;
+}

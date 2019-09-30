@@ -1,0 +1,58 @@
+q11.
+
+int main(){
+        char x[4];
+        int *p,*q,*r,*s;
+        p = &x[0];
+        q = x+1;
+        r = x+2;
+        s = x+3;
+        printf("Endereço: %d \n", p);
+        printf("Endereço: %d \n", q);
+        printf("Endereço: %d \n", r);
+        printf("Endereço: %d \n", s);
+}
+
+int main(){
+        int x[4];
+        int *p,*q,*r,*s;
+        p = &x[0];
+        q = x+1;
+        r = x+2;
+        s = x+3;
+        printf("Endereço: %d \n", p);
+        printf("Endereço: %d \n", q);
+        printf("Endereço: %d \n", r);
+        printf("Endereço: %d \n", s);
+}
+
+int main(){
+        float x[4];
+        int *p,*q,*r,*s;
+        p = &x[0];
+        q = x+1;
+        r = x+2;
+        s = x+3;
+        printf("Endereço: %d \n", p);
+        printf("Endereço: %d \n", q);
+        printf("Endereço: %d \n", r);
+        printf("Endereço: %d \n", s);
+}
+
+
+
+
+
+
+int main(){
+        double x[4];
+        int *p,*q,*r,*s;
+        p = &x[0];
+        q = x+1;
+        r = x+2;
+        s = x+3;
+        printf("Endereço: %d \n", p);
+        printf("Endereço: %d \n", q);
+        printf("Endereço: %d \n", r);
+        printf("Endereço: %d \n", s);
+}

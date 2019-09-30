@@ -1,0 +1,20 @@
+q9.
+
+int main(){
+      int vet[] = {4,9,13};
+      int i;
+      for(i=0;i<3;i++){
+        printf("%d ",*(vet+i));
+      }
+    }
+// em cada iteração do for ele mostra o que está armazenado no ponteiro pela posição do vetor
+
+
+int main(){
+  int vet[] = {4,9,13};
+  int i;
+  for(i=0;i<3;i++){
+    printf("%X ",vet+i);
+  }
+}
+// em cada iteração do for ele mostra o endereço para qual o ponteiro aponta pela posição do vetor

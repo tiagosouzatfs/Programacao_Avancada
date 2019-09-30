@@ -1,0 +1,70 @@
+q5.
+
+#include <stdio.h>
+int main() {
+  int    valor;
+  int   *p1;
+  float  temp;
+  float *p2;
+  char   aux;
+  char  *nome = "Ponteiros";
+  char  *p3;
+  int    idade;
+  int    vetor[3];
+  int   *p4;
+  int   *p5;
+  /* (a) */
+  valor = 10; // a variável "valor" recebe o número 10
+  p1 = &valor; // o ponteiro para int "p1" recebe o endereço da varável "valor"
+  *p1 = 20; // o próprio ponteiro "*p1" recebe o número 20 no endereço de "valor"
+  printf("%d \n", valor); // ao mostrar a variável "valor" aparece o número 20
+  /* (b) */
+  temp = 26.5; // a variável "temp" recebe o número 26.5
+  p2 = &temp; // o ponteiro para float "p2" recebe o endereço da varável "temp"
+  *p2 = 29.0; // o próprio ponteiro "*p2" recebe o número 29.0 no endereço de "temp"
+  printf("%.1f \n", temp); // ao mostrar a variável "temp" aparece o número 29.0 com o ponto flutuante desiginado na função printf
+  /* (c) */
+  p3 = &nome[0]; // o ponterio para char "p3" recebe o endereço do ponteiro para char "nome" em um array, com a posição 0
+  aux = *p3; // a variável auxiliar recebe a primeira posição do nome "Ponteiros"
+  printf("%c \n", aux); // a variável auxiliar mostra o char "p"
+  /* (d) */
+  p3 = &nome[4];// o ponterio para char "p3" recebe o endereço do ponteiro para char "nome" em um array, com a posição 4
+  aux = *p3;// a variável auxiliar recebe a quarta posição do nome "Ponteiros", mas começa a contagem pela posição 0
+  printf("%c \n", aux); // a variável auxiliar mostra o char "e"
+  /* (e) */
+  p3 = nome; // o ponteiro para char "p3" recebe o ponteiro para nome "nome" que recebe "Ponteiros"
+  printf("%c \n", *p3); // ao mostrar o ponteiro "*p3", deveria aparecer o nome completo "Ponteiros", porém, ele foi declarado como char, então ele só mostra um único caracter e mostra a primeira posição, que é a letra "p"
+  /* (f) */
+  p3 = p3 + 4; // o ponteiro para char "p3",  recebe a primeira posiçao do nome "Ponteiros" mais 4 posições a seguir.
+  printf("%c \n", *p3); // ao mostrar o ponteiro "*p3", deveria aparecer o nome completo "Ponteiros", porém, ele foi declarado como char, então ele só mostra um único caracter e mostra a quarta posição, que é a letra "e"
+  /* (g) */
+  p3--; // o ponteiro para char "p3" decrementa uma posição do declarado na questão a cima
+  printf("%c \n", *p3); // ao mostrar o ponteiro "*p3", deveria aparecer o nome completo "Ponteiros", porém, ele foi declarado como char, então ele só mostra um único caracter e mostra a terceira posição, que é a letra "t"
+  /* (h) */
+  vetor[0] = 31; // vetor na posição 0 recebe o número 31
+  vetor[1] = 45; // vetor na posição 1 recebe o número 45
+  vetor[2] = 27; // vetor na posição 2 recebe o número 27
+  p4 = vetor; // o ponteiro para int "p4" recebe o vetor declarado no escopo, porém, ele está sem a declaração da posição, então o ponteiro recebe o valor da primeira posição do vetor
+  idade = *p4; // a variável "idade" recebe o valor do próprio ponteiro "*p4" que é o primeiro endereço do vetor.
+  printf("%d \n", idade); // mostra o número 31
+  /* (i) */
+  p5 = p4 + 1; // acrescenta o valor de uma posição no ponteiro para int "p4"
+  idade = *p5; // idade recebe o valor no endereço do ponteiro "p5"
+  printf("%d \n", idade); // mostra o número 45
+  /* (j) */
+  p4 = p5 + 1; // incrementa uma posição no vetor[1] armazenado no ponteiro "p5"
+  idade = *p4; // a variável "idade" recebe o valor do endereço do ponteiro "*p4"
+  printf("%d \n", idade); // mostra o número 27
+  /* (l) */
+  p4 = p4 - 2; //  no ponteiro "p4" está armazenado o valor da ultima posição do vetor, e agora le vai subtrair duas posições
+  idade = *p4; // a variável "idade" recebe o valor armazenado no ponteiro "*p4"
+  printf("%d \n", idade); // mostra o número 31
+  /* (m) */
+  p5 = &vetor[2] - 1; // o ponteiro "p5" recebe o endereço da posição 2 do vetor e decrementa uma posição
+  printf("%d \n", *p5); //mostra o número 45
+  /* (n) */
+  p5++; // o ponteiro "p5" recebe o endereço da posição 1 do vetor e incrementa uma posição
+  printf("%d \n", *p5); //mostra o número 27
+
+  return(0);
+}

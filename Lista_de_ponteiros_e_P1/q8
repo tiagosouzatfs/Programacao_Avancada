@@ -1,0 +1,9 @@
+q8.
+
+p = mat + 1; // //expressão válida. incrementar o endereço do array "mat[4]"
+
+p = mat++; // expressão inválida. não se pode incrementar desta forma o valor definido no array "mat[4]"
+
+p = ++mat; // expressão inválida. não se pode incrementar desta forma o valor definido no array "mat[4]"
+
+x = (*mat)++; //expressão válida. incrementar o endereço do array "mat[4]"

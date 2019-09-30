@@ -1,0 +1,18 @@
+float aloha[10], coisas[10][5], *pf, value = 2.2;
+int i=3;
+Identifique quais dos seguintes comandos é válido ou inválido:
+
+int main(){
+    
+    float aloha[10], coisas[10][5], *pf, value = 2.2;
+    int i=3;
+    
+    aloha[2] = value; // válido
+    scanf("%f", &aloha); // válido
+    aloha = value"; // inválido. Não pode atribuir "value" a "aloha"
+    printf("%f", aloha); // válido
+    coisas[4][4] = aloha[3]; // válido
+    coisas[5] = aloha; // inválido. Não pode atribuir "aloha" a "coisas"
+    pf = value; // inválido. mas se usar o & passa a ser válido
+    pf = aloha; //válido
+}

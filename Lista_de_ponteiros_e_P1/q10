@@ -1,0 +1,6 @@
+q10.
+
+x for declarado como char? 4093, 4094 e 4095
+x for declarado como int? 4094, 4096 3 4098
+x for declarado como float? 4096, 5000 e 5004
+x for declarado como double? 5000, 5008 e 5016

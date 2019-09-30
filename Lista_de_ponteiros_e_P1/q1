@@ -1,0 +1,3 @@
+Q1.
+
+O ponteiro trabalha diretamente com os endereços de memória passando por referência através do operador “&”, assim, os processos de manipulação de dados ficam muito mais rápidos, agilizando a resolução de problemas, e gastando menos tempo na execução das tarefas.

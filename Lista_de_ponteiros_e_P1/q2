@@ -1,0 +1,25 @@
+q2.
+
+#include <stdio.h>
+int main()
+{
+    int i=3,j=5;
+    int *p, *q;
+    p = &i;
+    q = &j;
+    printf("Resultado: %d \n", p == &i);
+    
+    // Ele passa o valor 1, que significa verdadeiro.
+    printf("Resultado: %d \n", *p - *q);
+    // Esta operação trata de uma subtração de inteiros, já que "*p" e "*q" 	estão referenciando o valor do endereço das
+    // variáveis "i" e "j", que recebem respectivamente, 3 e 5. Logo, 3 - 5 = -2.
+    printf("Resultado: %d \n", **&p);
+    // Inicialmente, "p" recebe o ENDEREÇO na memória de "i". Em seguida, ele 	está lendo o ENDEREÇO de "p" que recebeu o
+    // endereço de "i" que é "&p". Em sequência, ele lê o VALOR de "&p" que é 	"*&p", e finalmente, ele lê o VALOR no ENDEREÇO
+    // de "**&p" que referencia o VALOR *p na memória que é igual a 3.
+    printf("Resultado: %d \n", 3 - *p/(*q) + 7);
+    // A operação: 3 - *p/(*q) + 7; mostra uma divisão entre os ponteiros *p e 	*q, que possuem o valor do endereço da varável
+    // utilizando o "&", assim, mostrando os valores 3 e 5, respectivamente. 	Dessa forma, a divisão por inteiros retorna a
+    // parte inteira da divisão, que no caso é 0. Então, o valor da operação é: 	3 - 0 + 7 = 10.
+    return 0;
+}

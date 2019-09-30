@@ -1,0 +1,31 @@
+q4.
+
+#include <stdio.h>
+int main()
+{
+    int i=3,j=5;
+    int *p, *q;
+    p = &i;
+    q = &j;
+    p = i;
+    // expressão não é legal, pois para usar o ponteiro para int "p" você tem que usar o "&", pois ele não acessa o endereço dessa forma.
+    q = &j;
+    // É uma expressão legal.
+    p = &*&i;
+    // É uma expressão legal.
+    i = (*&)j;
+    // Expressão não é legal pois não pode separar da variável o endereço de memória a ser passado junto com o valor que o ponteiro aponta.
+    i = *&j;
+    // É uma expressão legal.
+    i = *&*&j;
+    // É uma expressão legal, porém é redundante.
+    q = *p;
+    // É uma expressão legal.
+    i = (*p)++ + *q;
+    // É uma expressão legal, porém é redundante.
+    
+    printf("Retorno: %d \n", i);
+    printf("Retorno: %d \n", p);
+    printf("Retorno: %d \n", q);
+    return 0;
+}

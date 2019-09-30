@@ -1,0 +1,19 @@
+q17.
+
+Na questão 14, sem implementar a função qsorte() eu obtive o tempo de: 0.003ms.
+Na questão 16, implementando a função qsort() eu obtive o tempo de: 0.002ms;
+Código utilizado:
+
+#include <stdio.h>
+#include<time.h>
+int main(){
+   clock_t Ticks[2];
+   Ticks[0] = clock();
+   //O código a ter seu tempo de execução medido ficaria neste ponto.
+   Ticks[1] = clock();
+   double Tempo = (Ticks[1] - Ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
+   printf("Tempo gasto: %g ms.", Tempo);
+   getchar();
+   return 0;
+}
+    • Sem implementar a função qsort() o tempo de processamento foi maior.
